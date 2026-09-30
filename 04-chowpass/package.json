@@ -1,0 +1,32 @@
+{
+  "name": "chowpass",
+  "version": "1.0.0",
+  "description": "ChowPass: staff meal benefits run like an HMO. Companies pay a monthly plan per staff, staff redeem meal codes at partner restaurants, restaurants are settled per meal.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "db:init": "node scripts/initDb.js",
+    "test": "jest --runInBand"
+  },
+  "author": "Favour Oghale",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^18.0.4",
+    "express": "^5.2.1",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "mysql2": "^3.24.5"
+  },
+  "devDependencies": {
+    "jest": "^30.5.2",
+    "supertest": "^7.3.0"
+  }
+}
