@@ -2,7 +2,7 @@
 
 **Need it done today? Urgent2k it.** Urgent2k connects people who need everyday tasks done (errands, cleaning, generator repairs, moving help, laundry, queueing) with trusted local **taskers**. Customers post a task with a budget from **₦2,000**, taskers send offers, and payment is held safely until the job is confirmed.
 
-> **Live demo:** _add your deployed link here_ · Demo logins: `ada@demo.ng` (customer) or `zainab@demo.ng` (tasker), password `Password123!`
+> **Live demo:** [https://urgent2k-eej5.onrender.com](https://urgent2k-eej5.onrender.com) (free hosting, may take a minute to wake up) · Demo logins: `ada@demo.ng` (customer) or `zainab@demo.ng` (tasker), password `Password123!`
 
 ![Home](docs/screenshots/01-home.png)
 

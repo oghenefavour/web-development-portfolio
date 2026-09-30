@@ -2,7 +2,7 @@
 
 **Free staff lunches, handled.** ChowPass lets companies give employees daily meals the way HMOs handle healthcare. The company pays a **fixed monthly premium per staff member**, staff get a **one-time meal code** at mealtimes, and **partner restaurants** are paid a fixed amount for every meal they serve.
 
-> **Live demo:** _add your deployed link here_ · Demo logins (password `Password123!`): `ada@demo.ng` staff · `kitchen@demo.ng` restaurant · `hr@demo.ng` HR · `admin@chowpass.ng` ChowPass operations
+> **Live demo:** [https://chowpass.onrender.com](https://chowpass.onrender.com) (free hosting, may take a minute to wake up) · Demo logins (password `Password123!`): `ada@demo.ng` staff · `kitchen@demo.ng` restaurant · `hr@demo.ng` HR · `admin@chowpass.ng` ChowPass operations
 
 ![Home](docs/screenshots/01-home.png)
 

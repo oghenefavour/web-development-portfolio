@@ -2,7 +2,7 @@
 
 **Laundry picked up, washed and delivered.** SpinDrop is a laundromat that is also a logistics company. Customers price their laundry **by garment type**, a **rider** collects it, the laundry staff wash it, and a rider brings it back. The same platform books **home cleaners** and **movers**, who sign up and accept jobs near them.
 
-> **Live demo:** _add your deployed link here_ · Demo logins (password `Password123!`): `ada@demo.ng` customer · `musa@demo.ng` rider · `grace@demo.ng` cleaner · `kunle@demo.ng` mover · `admin@spindrop.ng` laundry staff
+> **Live demo:** [https://spindrop.onrender.com](https://spindrop.onrender.com) (free hosting, may take a minute to wake up) · Demo logins (password `Password123!`): `ada@demo.ng` customer · `musa@demo.ng` rider · `grace@demo.ng` cleaner · `kunle@demo.ng` mover · `admin@spindrop.ng` laundry staff
 
 ![Home](docs/screenshots/01-home.png)
 

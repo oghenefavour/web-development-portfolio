@@ -8,10 +8,10 @@ Every project has its own folder, README, setup instructions, automated tests, s
 
 | # | Project | What it is | Highlights | Live demo |
 |---|---|---|---|---|
-| 01 | [🛒 Foodstuff Store](01-foodstuff-store/) | An online grocery shop | Catalogue, cart, **transactional checkout** with stock locking, order tracking, admin API · 22 tests | _coming soon_ |
-| 02 | [⚡ Urgent2k](02-urgent2k/) | A TaskRabbit for Nigerians, connecting people with local taskers for errands and odd jobs | Two-sided marketplace, offers, **escrow-style payments** with a 10% fee, reviews and ratings, privacy of addresses · 16 tests | _coming soon_ |
-| 03 | [🧺 SpinDrop](03-spindrop/) | Laundry plus logistics: riders, home cleaners and movers | **Per-garment pricing** (jeans ₦5,000, shirts ₦2,000…), pickup and delivery jobs for riders, cleaners and movers who sign up, admin board with revenue and payouts · 17 tests | _coming soon_ |
-| 04 | [🍛 ChowPass](04-chowpass/) | Staff meal benefits run like an HMO | Fixed-price packages, one-time **meal codes** (lunch, plus dinner if the company pays for it), staff, HR, restaurant and operations dashboards, monthly settlement · 16 tests | _coming soon_ |
+| 01 | [🛒 Foodstuff Store](01-foodstuff-store/) | An online grocery shop | Catalogue, cart, **transactional checkout** with stock locking, order tracking, admin API · 22 tests | [Open demo](https://foodstuff-store.onrender.com) |
+| 02 | [⚡ Urgent2k](02-urgent2k/) | A TaskRabbit for Nigerians, connecting people with local taskers for errands and odd jobs | Two-sided marketplace, offers, **escrow-style payments** with a 10% fee, reviews and ratings, privacy of addresses · 16 tests | [Open demo](https://urgent2k-eej5.onrender.com) |
+| 03 | [🧺 SpinDrop](03-spindrop/) | Laundry plus logistics: riders, home cleaners and movers | **Per-garment pricing** (jeans ₦5,000, shirts ₦2,000…), pickup and delivery jobs for riders, cleaners and movers who sign up, admin board with revenue and payouts · 17 tests | [Open demo](https://spindrop.onrender.com) |
+| 04 | [🍛 ChowPass](04-chowpass/) | Staff meal benefits run like an HMO | Fixed-price packages, one-time **meal codes** (lunch, plus dinner if the company pays for it), staff, HR, restaurant and operations dashboards, monthly settlement · 16 tests | [Open demo](https://chowpass.onrender.com) |
 
 **71 automated integration tests** across the four apps run on every push.
 

@@ -2,7 +2,7 @@
 
 A full-stack online foodstuff store built with **Node.js, Express and MySQL**. Customers can browse Nigerian foodstuffs, search and filter the catalogue, manage a cart, check out with delivery details and track their order. Admins can manage products and move orders through their delivery lifecycle.
 
-> **Live demo:** _add your deployed link here_ · **Tech:** Node.js 22, Express 5, MySQL 8, vanilla JavaScript, Jest, Docker, GitHub Actions
+> **Live demo:** [https://foodstuff-store.onrender.com](https://foodstuff-store.onrender.com) (free hosting, may take a minute to wake up) · **Tech:** Node.js 22, Express 5, MySQL 8, vanilla JavaScript, Jest, Docker, GitHub Actions
 
 ![Catalogue](docs/screenshots/01-catalogue.png)
 
