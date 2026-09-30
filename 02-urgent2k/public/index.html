@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Urgent2k: Get it done today</title>
+  <meta name="description" content="Urgent2k connects you with trusted local taskers for errands, cleaning, repairs, moving and more. Tasks from NGN 2,000.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#">⚡ Urgent<span>2k</span></a>
+      <nav class="nav" id="nav"></nav>
+    </div>
+  </header>
+
+  <main class="wrap" id="app"></main>
+
+  <!-- Login / register -->
+  <dialog id="authDialog">
+    <div class="tabs" role="tablist">
+      <button type="button" class="tab" data-auth-tab="login" role="tab">Log in</button>
+      <button type="button" class="tab" data-auth-tab="register" role="tab">Sign up</button>
+    </div>
+
+    <form id="loginForm" novalidate>
+      <label>Email <input name="email" type="email" required autocomplete="email"></label>
+      <label>Password <input name="password" type="password" required autocomplete="current-password"></label>
+      <p class="hint">Demo: <b>ada@demo.ng</b> (customer) or <b>zainab@demo.ng</b> (tasker), password <b>Password123!</b></p>
+      <p class="form-error" data-error></p>
+      <div class="dialog-actions">
+        <button type="button" class="ghost" data-close-dialog="authDialog">Cancel</button>
+        <button type="submit" class="primary">Log in</button>
+      </div>
+    </form>
+
+    <form id="registerForm" novalidate hidden>
+      <fieldset class="role-pick">
+        <legend>I want to…</legend>
+        <label class="radio"><input type="radio" name="role" value="customer" checked> Get tasks done</label>
+        <label class="radio"><input type="radio" name="role" value="tasker"> Earn as a tasker</label>
+      </fieldset>
+      <label>Full name <input name="fullName" required autocomplete="name"></label>
+      <label>Email <input name="email" type="email" required autocomplete="email"></label>
+      <label>Phone <input name="phone" required placeholder="0803 123 4567" autocomplete="tel"></label>
+      <label>City <input name="city" required value="Abuja"></label>
+      <label>Password <input name="password" type="password" required autocomplete="new-password" placeholder="8+ characters, with a number"></label>
+      <div id="taskerFields" hidden>
+        <p class="label">Your skills</p>
+        <div class="checks" id="skillChecks"></div>
+        <label>Short bio <input name="bio" maxlength="500" placeholder="What makes you great at this?"></label>
+      </div>
+      <p class="form-error" data-error></p>
+      <div class="dialog-actions">
+        <button type="button" class="ghost" data-close-dialog="authDialog">Cancel</button>
+        <button type="submit" class="primary">Create account</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
