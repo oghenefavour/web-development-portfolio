@@ -1,0 +1,37 @@
+{
+  "name": "foodstuff-store-api",
+  "version": "1.0.0",
+  "description": "Online foodstuff store: product catalogue, cart, checkout and order management built with Node.js, Express and MySQL.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "db:init": "node scripts/initDb.js",
+    "test": "jest --runInBand"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mysql",
+    "rest-api",
+    "ecommerce"
+  ],
+  "author": "Favour Oghale",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.4",
+    "express": "^5.2.1",
+    "helmet": "^8.3.0",
+    "mysql2": "^3.24.5"
+  },
+  "devDependencies": {
+    "jest": "^30.5.2",
+    "supertest": "^7.3.0"
+  }
+}
