@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpinDrop: Laundry, Cleaning &amp; Moving</title>
+  <meta name="description" content="SpinDrop picks up your laundry, washes it and delivers it back, and books trusted home cleaners and movers.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#">🫧 Spin<span>Drop</span></a>
+      <nav class="nav" id="nav"></nav>
+    </div>
+  </header>
+
+  <main class="wrap" id="app"></main>
+
+  <dialog id="authDialog">
+    <div class="tabs" role="tablist">
+      <button type="button" class="tab" data-auth-tab="login">Log in</button>
+      <button type="button" class="tab" data-auth-tab="register">Sign up</button>
+    </div>
+    <form id="loginForm" novalidate>
+      <label>Email <input name="email" type="email" required autocomplete="email"></label>
+      <label>Password <input name="password" type="password" required autocomplete="current-password"></label>
+      <p class="hint">Demo logins (password <b>Password123!</b>): <b>ada@demo.ng</b> customer · <b>musa@demo.ng</b> rider · <b>grace@demo.ng</b> cleaner · <b>kunle@demo.ng</b> mover · <b>admin@spindrop.ng</b> laundry staff</p>
+      <p class="form-error" data-error></p>
+      <div class="dialog-actions">
+        <button type="button" class="ghost" data-close-dialog="authDialog">Cancel</button>
+        <button type="submit" class="primary">Log in</button>
+      </div>
+    </form>
+    <form id="registerForm" novalidate hidden>
+      <label>I am joining as
+        <select name="role">
+          <option value="customer">Customer: I need laundry, cleaning or moving</option>
+          <option value="rider">Rider: pick up &amp; deliver laundry</option>
+          <option value="cleaner">Cleaner: clean homes</option>
+          <option value="mover">Mover: help people move</option>
+        </select>
+      </label>
+      <label>Full name <input name="fullName" required autocomplete="name"></label>
+      <label>Email <input name="email" type="email" required autocomplete="email"></label>
+      <label>Phone <input name="phone" required placeholder="0803 123 4567" autocomplete="tel"></label>
+      <label>City <input name="city" required value="Abuja"></label>
+      <label>Password <input name="password" type="password" required autocomplete="new-password" placeholder="8+ characters, with a number"></label>
+      <p class="form-error" data-error></p>
+      <div class="dialog-actions">
+        <button type="button" class="ghost" data-close-dialog="authDialog">Cancel</button>
+        <button type="submit" class="primary">Create account</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
