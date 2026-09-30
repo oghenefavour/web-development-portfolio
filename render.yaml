@@ -1,0 +1,86 @@
+# Render Blueprint: creates all four demo websites on Render's free plan.
+# After the first deploy, open Render > Environment Groups > "aiven-mysql",
+# paste in your Aiven MySQL details, save, then redeploy the four services.
+
+envVarGroups:
+  - name: aiven-mysql
+    envVars:
+      - key: DB_HOST
+        value: paste-your-aiven-host-here
+      - key: DB_PORT
+        value: "3306"
+      - key: DB_USER
+        value: avnadmin
+      - key: DB_PASSWORD
+        value: paste-your-aiven-password-here
+      - key: DB_SSL
+        value: "true"
+      - key: DB_SSL_REJECT_UNAUTHORIZED
+        value: "false"
+      - key: AUTO_INIT_DB
+        value: "true"
+      - key: NODE_VERSION
+        value: "22"
+
+services:
+  - type: web
+    name: foodstuff-store
+    runtime: node
+    plan: free
+    rootDir: 01-foodstuff-store
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - fromGroup: aiven-mysql
+      - key: DB_NAME
+        value: foodstuff_store
+      - key: ADMIN_API_KEY
+        generateValue: true
+
+  - type: web
+    name: urgent2k
+    runtime: node
+    plan: free
+    rootDir: 02-urgent2k
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - fromGroup: aiven-mysql
+      - key: DB_NAME
+        value: urgent2k
+      - key: JWT_SECRET
+        generateValue: true
+
+  - type: web
+    name: spindrop
+    runtime: node
+    plan: free
+    rootDir: 03-spindrop
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - fromGroup: aiven-mysql
+      - key: DB_NAME
+        value: spindrop
+      - key: JWT_SECRET
+        generateValue: true
+
+  - type: web
+    name: chowpass
+    runtime: node
+    plan: free
+    rootDir: 04-chowpass
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - fromGroup: aiven-mysql
+      - key: DB_NAME
+        value: chowpass
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ALLOW_ANYTIME_MEALS
+        value: "true"
