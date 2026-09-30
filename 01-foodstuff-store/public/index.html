@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Foodstuff Store</title>
+  <meta name="description" content="Order Nigerian foodstuffs online: rice, beans, garri, oils, soup ingredients and more.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="/">🧺 Foodstuff Store</a>
+      <div class="top-actions">
+        <button class="link-btn" id="trackBtn" type="button">Track order</button>
+        <button class="cart-btn" id="cartBtn" type="button" aria-label="Open cart">
+          Cart <span class="badge" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Fresh foodstuff, delivered.</h1>
+      <p>Rice, beans, garri, oils and soup ingredients at fair prices. Free delivery on orders over ₦100,000.</p>
+    </section>
+
+    <section class="controls" aria-label="Filter products">
+      <input id="search" type="search" placeholder="Search e.g. rice, garri, palm oil" aria-label="Search products">
+      <select id="sort" aria-label="Sort products">
+        <option value="name">Sort: Name</option>
+        <option value="price_asc">Price: Low to high</option>
+        <option value="price_desc">Price: High to low</option>
+      </select>
+    </section>
+    <nav class="chips" id="categories" aria-label="Categories"></nav>
+
+    <p class="status" id="status" role="status"></p>
+    <section class="grid" id="products" aria-live="polite"></section>
+    <div class="pager" id="pager"></div>
+  </main>
+
+  <!-- Cart drawer -->
+  <aside class="drawer" id="cartDrawer" aria-hidden="true" aria-label="Shopping cart">
+    <div class="drawer-head">
+      <h2>Your cart</h2>
+      <button class="icon-btn" data-close="cartDrawer" type="button" aria-label="Close cart">✕</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="totals" id="cartTotals"></div>
+    <button class="primary wide" id="checkoutBtn" type="button">Checkout</button>
+  </aside>
+
+  <!-- Checkout -->
+  <dialog id="checkoutDialog">
+    <form id="checkoutForm" method="dialog" novalidate>
+      <h2>Delivery details</h2>
+      <label>Full name <input name="name" required maxlength="120" autocomplete="name"></label>
+      <label>Phone number <input name="phone" required placeholder="0803 123 4567" autocomplete="tel"></label>
+      <label>Email (optional) <input name="email" type="email" autocomplete="email"></label>
+      <label>Delivery address <input name="address" required maxlength="255" autocomplete="street-address"></label>
+      <label>City <input name="city" required maxlength="80" value="Abuja"></label>
+      <p class="form-error" id="checkoutError" role="alert"></p>
+      <div class="dialog-actions">
+        <button type="button" class="ghost" data-close-dialog="checkoutDialog">Back</button>
+        <button type="submit" class="primary" id="placeOrderBtn">Place order</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Order confirmation / tracking result -->
+  <dialog id="orderDialog">
+    <div id="orderBody"></div>
+    <div class="dialog-actions">
+      <button type="button" class="primary" data-close-dialog="orderDialog">Done</button>
+    </div>
+  </dialog>
+
+  <!-- Track order -->
+  <dialog id="trackDialog">
+    <form id="trackForm" method="dialog" novalidate>
+      <h2>Track your order</h2>
+      <label>Order reference <input name="reference" required placeholder="FS-XXXXXX"></label>
+      <label>Phone number used at checkout <input name="phone" required></label>
+      <p class="form-error" id="trackError" role="alert"></p>
+      <div class="dialog-actions">
+        <button type="button" class="ghost" data-close-dialog="trackDialog">Cancel</button>
+        <button type="submit" class="primary">Track</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
