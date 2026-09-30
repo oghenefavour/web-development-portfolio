@@ -1,6 +1,7 @@
 name: "03 SpinDrop: tests"
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
     paths: ["03-spindrop/**", ".github/workflows/03-spindrop-ci.yml"]

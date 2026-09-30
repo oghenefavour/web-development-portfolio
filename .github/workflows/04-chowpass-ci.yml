@@ -1,6 +1,7 @@
 name: "04 ChowPass: tests"
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
     paths: ["04-chowpass/**", ".github/workflows/04-chowpass-ci.yml"]

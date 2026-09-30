@@ -1,6 +1,7 @@
 name: "01 Foodstuff Store: tests"
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
     paths: ["01-foodstuff-store/**", ".github/workflows/01-foodstuff-store-ci.yml"]

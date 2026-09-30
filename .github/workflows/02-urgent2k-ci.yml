@@ -1,6 +1,7 @@
 name: "02 Urgent2k: tests"
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
     paths: ["02-urgent2k/**", ".github/workflows/02-urgent2k-ci.yml"]
