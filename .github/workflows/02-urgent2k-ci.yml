@@ -1,0 +1,39 @@
+name: "02 Urgent2k: tests"
+
+on:
+  push:
+    branches: [main]
+    paths: ["02-urgent2k/**", ".github/workflows/02-urgent2k-ci.yml"]
+  pull_request:
+    paths: ["02-urgent2k/**"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 02-urgent2k
+    services:
+      mysql:
+        image: mysql:8.4
+        env:
+          MYSQL_ROOT_PASSWORD: rootpass
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h localhost -prootpass"
+          --health-interval=5s --health-timeout=5s --health-retries=20
+    env:
+      DB_HOST: 127.0.0.1
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASSWORD: rootpass
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: 02-urgent2k/package-lock.json
+      - run: npm ci
+      - run: npm test
