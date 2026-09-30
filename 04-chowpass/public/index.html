@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ChowPass: Staff Meals, Sorted</title>
+  <meta name="description" content="ChowPass runs staff lunch benefits like an HMO: one monthly plan per staff, meal codes at partner restaurants, simple settlement.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#">🍛 Chow<span>Pass</span></a>
+      <nav class="nav" id="nav"></nav>
+    </div>
+  </header>
+  <main class="wrap" id="app"></main>
+
+  <dialog id="authDialog">
+    <div class="tabs">
+      <button type="button" class="tab" data-auth-tab="login">Log in</button>
+      <button type="button" class="tab" data-auth-tab="company">Company sign-up</button>
+      <button type="button" class="tab" data-auth-tab="restaurant">Restaurant sign-up</button>
+    </div>
+    <form id="loginForm" novalidate>
+      <label>Email <input name="email" type="email" required autocomplete="email"></label>
+      <label>Password <input name="password" type="password" required autocomplete="current-password"></label>
+      <p class="hint">Demo logins (password <b>Password123!</b>): <b>ada@demo.ng</b> staff · <b>kitchen@demo.ng</b> restaurant · <b>hr@demo.ng</b> HR · <b>admin@chowpass.ng</b> ChowPass ops</p>
+      <p class="form-error" data-error></p>
+      <div class="dialog-actions"><button type="button" class="ghost" data-close-dialog="authDialog">Cancel</button><button type="submit" class="primary">Log in</button></div>
+    </form>
+    <form id="companyForm" novalidate hidden>
+      <label>Company name <input name="companyName" required></label>
+      <label>Package <select name="packageCode" id="packageSelect"></select></label>
+      <label>City <input name="city" required value="Abuja"></label>
+      <label>Your name (HR) <input name="fullName" required autocomplete="name"></label>
+      <label>Work email <input name="email" type="email" required autocomplete="email"></label>
+      <label>Phone <input name="phone" required placeholder="0803 123 4567"></label>
+      <label>Password <input name="password" type="password" required autocomplete="new-password" placeholder="8+ characters, with a number"></label>
+      <p class="form-error" data-error></p>
+      <div class="dialog-actions"><button type="button" class="ghost" data-close-dialog="authDialog">Cancel</button><button type="submit" class="primary">Create company account</button></div>
+    </form>
+    <form id="restaurantForm" novalidate hidden>
+      <label>Restaurant name <input name="restaurantName" required></label>
+      <label>Address <input name="address" required></label>
+      <label>City <input name="city" required value="Abuja"></label>
+      <label>Your name <input name="fullName" required autocomplete="name"></label>
+      <label>Email <input name="email" type="email" required autocomplete="email"></label>
+      <label>Phone <input name="phone" required placeholder="0803 123 4567"></label>
+      <label>Password <input name="password" type="password" required autocomplete="new-password" placeholder="8+ characters, with a number"></label>
+      <p class="form-error" data-error></p>
+      <div class="dialog-actions"><button type="button" class="ghost" data-close-dialog="authDialog">Cancel</button><button type="submit" class="primary">Join as a restaurant</button></div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
