@@ -1,0 +1,29 @@
+# docker compose up --build   ->  http://localhost:3000
+services:
+  db:
+    image: mysql:8.4
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-prootpass"]
+      interval: 5s
+      retries: 20
+  api:
+    build: .
+    environment:
+      PORT: 3000
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: rootpass
+      DB_NAME: spindrop
+      JWT_SECRET: local-docker-secret-change-me
+      AUTO_INIT_DB: "true"
+    ports:
+      - "3000:3000"
+    depends_on:
+      db:
+        condition: service_healthy
+volumes:
+  db_data:
